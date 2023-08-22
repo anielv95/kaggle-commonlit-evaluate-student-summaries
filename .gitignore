@@ -127,6 +127,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.kaggle-commonlit-evaluate-student-summaries
 
 # Spyder project settings
 .spyderproject
