@@ -1,0 +1,6 @@
+services:
+  app:
+  build: .
+  container_name: py-kaggle-commonlit
+  command: python 
+  volumes: ./..:/gh
