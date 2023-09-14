@@ -1,6 +1,8 @@
 settings:
-	git config --global user.email "anielvillegas@gmail.com"
-	git config --global user.name "aniel"
+	git config --global user.email ${GITEMAIL}
+	git config --global user.name ${GITNAME}
+	pip install --upgrade pip
+	pip install -r requirements-dev.txt
 
 download:
 	mkdir -p packages
