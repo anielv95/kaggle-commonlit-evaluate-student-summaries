@@ -1,4 +1,5 @@
-transformers
-sentence-transformers
-faiss-cpu
-langchain
+#transformers
+#sentence-transformers
+#faiss-cpu
+#langchain
+numpy
