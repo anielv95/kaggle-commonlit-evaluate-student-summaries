@@ -3,7 +3,7 @@ download:
 	git config --global user.name "aniel"
 	mkdir -p packages
 	pip install --upgrade pip
-		pip download -r requirements.txt -d packages
+	pip download -r requirements.txt -d packages
 
 zip:
 	make download
