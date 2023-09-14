@@ -1,6 +1,8 @@
-download:
+settings:
 	git config --global user.email "anielvillegas@gmail.com"
 	git config --global user.name "aniel"
+
+download:
 	mkdir -p packages
 	pip install --upgrade pip
 	pip download -r requirements.txt -d packages
