@@ -1,3 +1,8 @@
+#export KAGGLE_USERNAME=
+# export KAGGLE_KEY=
+#printenv
+#langchain-package
+
 settings:
 	git config --global user.email ${GITEMAIL}
 	git config --global user.name ${GITNAME}
@@ -15,5 +20,14 @@ zip:
 	python getting_packages.py
 
 install:
-	make download 
+	make zip 
 	pip install packages/*.whl
+
+k-dataset:
+	# make a python file that changes the json file
+	kaggle datasets init -p packages-zip
+	python uploading_dataset.py "langchain-package"
+	kaggle datasets create -p packages-zip -r zip
+
+k-update-dataset:
+	####
