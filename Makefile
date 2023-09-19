@@ -30,4 +30,4 @@ k-dataset:
 	kaggle datasets create -p packages-zip -r zip
 
 k-update-dataset:
-	####
+	kaggle datasets version  -p packages-zip -m "Updated data"
