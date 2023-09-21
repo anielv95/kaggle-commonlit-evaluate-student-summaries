@@ -1,6 +1,5 @@
+#python-dotenv
 #transformers
 #sentence-transformers
 #faiss-cpu
-#langchain
-#python-dotenv
-numpy
+langchain

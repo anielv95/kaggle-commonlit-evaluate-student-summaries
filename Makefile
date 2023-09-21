@@ -1,5 +1,7 @@
 #export KAGGLE_USERNAME=
 # export KAGGLE_KEY=
+#export GITEMAIL=
+#export GITNAME=
 #printenv
 #langchain-package
 
@@ -11,23 +13,24 @@ settings:
 
 download:
 	mkdir -p packages
-	pip install --upgrade pip
 	pip download -r requirements.txt -d packages
 
 zip:
+	rm -rf packages &&\
+	rm -rf packages-zip
 	make download
 	mkdir -p packages-zip 
 	python getting_packages.py
 
 install:
-	make zip 
 	pip install packages/*.whl
 
 k-dataset:
-	# make a python file that changes the json file
-	kaggle datasets init -p packages-zip
-	python uploading_dataset.py "langchain-package"
-	kaggle datasets create -p packages-zip -r zip
+	make zip &&\
+	make install &&\
+	kaggle datasets init -p packages-zip &&\
+	python uploading_dataset.py "langchain" &&\
+	kaggle datasets create -p packages-zip -u -r zip 
 
 k-update-dataset:
-	kaggle datasets version  -p packages-zip -m "Updated data"
+	kaggle datasets version  -p packages-zip -u -m "Updated data"

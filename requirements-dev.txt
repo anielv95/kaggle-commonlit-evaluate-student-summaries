@@ -1,1 +1,6 @@
+numpy
+pandas
 kaggle
+torch 
+torchvision 
+torchaudio
